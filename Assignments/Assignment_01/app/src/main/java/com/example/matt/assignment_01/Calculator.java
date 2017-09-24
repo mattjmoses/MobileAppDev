@@ -2,6 +2,7 @@ package com.example.matt.assignment_01;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -31,8 +32,142 @@ public class Calculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+
+        //Calling the ol button functions when the app starts
+        hookUpButtons();
+
+        //Setting up the listeners for ALL the buttons. Hoo dolly.
+        //This is also going to need to reference the strings.xml repository
+        n01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "1");
+            }
+        });
+
+        n02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "2");
+            }
+        });
+
+        n03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "3");
+            }
+        });
+
+        n04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "4");
+            }
+        });
+
+        n05.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "5");
+            }
+        });
+
+        n06.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "6");
+            }
+        });
+
+        n07.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "7");
+            }
+        });
+
+        n08.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "8");
+            }
+        });
+        n09.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "9");
+            }
+        });
+
+        n00.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "0");
+            }
+        });
+
+        dec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + ".");
+            }
+        });
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "+");
+            }
+        });
+
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "-");
+            }
+        });
+
+        mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "X");
+            }
+        });
+
+        div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "/");
+            }
+        });
+
+        eql.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "=");
+            }
+        });
+
+        bck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "<-");
+            }
+        });
+
+        clr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                screen.setText(screen.getText().toString() + "CLEAR");
+            }
+        });
+
+
+
     }//End function
 
+    //Links the layout elements to the Java code
     private void hookUpButtons()
     {
         n01 = (Button)findViewById(R.id.btn01Num);
