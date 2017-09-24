@@ -13,9 +13,11 @@
     <string name="bDec">.</string>
     <string name="bAdd">+</string>
     <string name="bSub">-</string>
-    <string name="bMul">X</string>
+    <string name="bMul">*</string>
     <string name="bDiv">/</string>
     <string name="bClr">CLEAR!!</string>
     <string name="bBck">Back</string>
     <string name="bEql">=</string>
+    <string name="num02">2</string>
+    <string name="bPlus">+</string>
 </resources>

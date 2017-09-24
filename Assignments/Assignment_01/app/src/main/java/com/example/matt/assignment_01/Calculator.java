@@ -27,6 +27,7 @@ public class Calculator extends AppCompatActivity {
     private Button bck;
     private Button clr;
     private TextView screen;
+    private MathHappener calculate = new MathHappener();
 
     //All the operators you need to make math happen. Huh Huh
     private final String addition = "+";
@@ -34,11 +35,15 @@ public class Calculator extends AppCompatActivity {
     private final String multiplication = "*";
     private final String division = "/";
     private final String equals = "=";
-    private String action;
+
 
     //Sets the first value to be not a number to avoid causing divide by zero problems
-    private double val01 =Double.NaN;
-    private double val02;
+    private String value01 = " ";
+    private String value02 = " ";
+    private String operator = " ";
+    private double result;
+    private boolean operatorHit;
+    private boolean hasDecimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +60,19 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 //Gets the prev tex on the screen and adds the value
                 //from the strings repository
-                screen.setText(screen.getText().toString() + " " + getString(R.string.n01));
+
+
+                //If the operator hasn't been hit and the value of value01 isn't empty
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n01);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n01);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
 
             }
         });
@@ -63,78 +80,194 @@ public class Calculator extends AppCompatActivity {
         n02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.n02));
+//                screen.setText(screen.getText().toString() + " " + getString(R.string.num02));
+
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n02);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n02);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
             }
         });
 
         n03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString()+ " "  + getString(R.string.n03));
+//                screen.setText(screen.getText().toString()+ " "  + getString(R.string.n03));
+
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n03);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n03);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
             }
         });
 
         n04.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.n04));
+//                screen.setText(screen.getText().toString() + " " + getString(R.string.n04));
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n04);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n04);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
             }
         });
 
         n05.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.n05));
+//                screen.setText(screen.getText().toString() + " " + getString(R.string.n05));
+
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n05);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n05);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
             }
         });
 
         n06.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.n06));
+//                screen.setText(screen.getText().toString() + " " + getString(R.string.n06));
+                if(!value01.equals(" ") && !operatorHit)
+                {
+                    value01 += getString(R.string.n06);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n06);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
             }
         });
 
         n07.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " "  + getString(R.string.n07));
+//                screen.setText(screen.getText().toString() + " "  + getString(R.string.n07));
+
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n07);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n07);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
             }
         });
 
         n08.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " "  + getString(R.string.n08));
+//                screen.setText(screen.getText().toString() + " "  + getString(R.string.n08));
+
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n08);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n08);
+                }
             }
         });
         n09.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " "  + getString(R.string.n09));
+//                screen.setText(screen.getText().toString() + " "  + getString(R.string.n09));
+
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n09);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n09);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                }
             }
         });
 
         n00.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.n00));
+//                screen.setText(screen.getText().toString() + " " + getString(R.string.n00));
+
+                if(!operatorHit)
+                {
+                    value01 += getString(R.string.n00);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 += getString(R.string.n00);
+                }
             }
         });
 
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.bDec));
+//                screen.setText(screen.getText().toString() + " " + getString(R.string.bDec));
+
+                //Same as above except checking to ensure there's no decimal in the number already
+                if(!operatorHit && !hasDecimal)
+                {
+                    value01 += getString(R.string.bDec);
+                    screen.setText(screen.getText().toString() + " " + value01);
+                    hasDecimal = true;
+                }
+                //Again ensuring there's no decimal already
+                else if(operatorHit == true && !hasDecimal)
+                {
+                    value02 += getString(R.string.bDec);
+                    screen.setText(screen.getText().toString() + " " + value02);
+                    hasDecimal = true;
+                }
             }
         });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.bAdd));
-                makeMathHappen();
-                action = addition;
+
+                if(!operatorHit)
+                {
+
+                    operator = getString(R.string.bPlus);
+                    operatorHit = true;
+                    screen.setText(screen.getText().toString() + " " + operator);
+                    hasDecimal = false;
+                }
 
             }
         });
@@ -142,42 +275,95 @@ public class Calculator extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.bSub));
+
+                if(!operatorHit)
+                {
+
+                    operator = getString(R.string.bSub);
+                    screen.setText(screen.getText().toString() + " " + operator);
+                    operatorHit = true;
+                    hasDecimal = false;
+                }
+
             }
         });
 
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.bMul));
+
+                if(!operatorHit)
+                {
+                    screen.setText(screen.getText().toString() + " " + getString(R.string.bMul));
+                    operator = getString(R.string.bMul);
+                    operatorHit = true;
+                    hasDecimal = false;
+                }
+
             }
         });
 
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.bDiv));
+
+                if(!operatorHit)
+                {
+
+                    operator = getString(R.string.bDiv);
+                    screen.setText(screen.getText().toString() + " " + operator);
+                    operatorHit = true;
+                    hasDecimal = false;
+                }
+
             }
         });
 
         eql.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + " " + getString(R.string.bEql));
+                if(operatorHit == true && !value01.equals(" ") && !value02.equals(" "))
+                {
+                    value01 = calculate.makeMathHappen(value01,operator,value02);
+
+//                    screen.setText(screen.getText().toString() + " " + getString(R.string.bEql));
+//                    screen.setText(" ");
+                    screen.setText(value01);
+//                    value02 = " ";
+                }
+;
             }
         });
         //This is going to delete the eqation by one
         bck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bBck));
+//                screen.setText(screen.getText().toString() + getString(R.string.bBck));
+                if(!operatorHit)
+                {
+                    value01 = " ";
+                    screen.setText(value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 = " ";
+                    screen.setText(value02);
+                }
+
             }
         });
         //This is going to clear everything that has been entered
         clr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bClr));
+//                screen.setText(screen.getText().toString() + getString(R.string.bClr));
+
+                value01 = " ";
+                value02 = " ";
+                operator = " ";
+                //Runs the calculator method with no values and clears all equations
+                screen.setText(calculate.makeMathHappen(value01,operator,value02));
+
             }
         });
 
@@ -189,7 +375,7 @@ public class Calculator extends AppCompatActivity {
     private void hookUpButtons()
     {
         n01 = (Button)findViewById(R.id.btn01Num);
-        n02 = (Button)findViewById(R.id.btn00Num);
+        n02 = (Button)findViewById(R.id.b2n02Num);
         n03 = (Button)findViewById(R.id.btn03Num);
         n04 = (Button)findViewById(R.id.btn04Num);
         n05 = (Button)findViewById(R.id.btn05Num);
@@ -199,7 +385,7 @@ public class Calculator extends AppCompatActivity {
         n09 = (Button)findViewById(R.id.btn09Num);
         n00 = (Button)findViewById(R.id.btn00Num);
         dec = (Button)findViewById(R.id.btnDec);
-        add = (Button)findViewById(R.id.btnSub);
+        add = (Button)findViewById(R.id.btnAdd);
         sub = (Button)findViewById(R.id.btnSub);
         mul = (Button)findViewById(R.id.btnMul);
         div = (Button)findViewById(R.id.btnDiv);
@@ -213,40 +399,6 @@ public class Calculator extends AppCompatActivity {
 
     }//End function
 
-    public double makeMathHappen()
-    {
-        //checking to see if the first value is actually a number
-        if(!Double.isNaN(val01))
-        {
-            //converts what's on the screen to a double
-            val02 = Double.parseDouble(screen.getText().toString());
 
-            switch(action)
-            {
-                case addition:
-                    val01 = val01 + val02;
-                    break;
-                case subtraction:
-                    val01 = val01 - val02;
-                    break;
-                case multiplication:
-                    val01 = val01 * val02;
-                    break;
-                case division:
-                    val01 = val01 / val02;
-                    break;
-                case equals:
-                    break;
-            }
-        }//End if
-        else
-            {
-                val01 = Double.parseDouble(screen.getText().toString());
-            }
-
-
-
-        return 0.0;
-    }//End function
 
 }//End Class
