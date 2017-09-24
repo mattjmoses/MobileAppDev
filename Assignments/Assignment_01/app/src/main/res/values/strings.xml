@@ -17,4 +17,5 @@
     <string name="bDiv">/</string>
     <string name="bClr">CLEAR!!</string>
     <string name="bBck">Back</string>
+    <string name="bEql">=</string>
 </resources>

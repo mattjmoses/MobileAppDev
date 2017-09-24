@@ -153,5 +153,22 @@
             android:layout_alignTop="@+id/btnClr"
             android:layout_toEndOf="@+id/b2n02Num"
             android:text="@string/bBck" />
+
+        <TextView
+            android:id="@+id/txtScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnBck"
+            android:layout_alignStart="@+id/btnBck"
+            android:layout_marginBottom="20dp"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/btnEql"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btnDec"
+            android:layout_toEndOf="@+id/btnDec"
+            android:text="@string/bEql" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
