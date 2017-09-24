@@ -329,7 +329,8 @@ public class Calculator extends AppCompatActivity {
 //                    screen.setText(screen.getText().toString() + " " + getString(R.string.bEql));
 //                    screen.setText(" ");
                     screen.setText(value01);
-//                    value02 = " ";
+                    value02 = " ";
+                    operatorHit = false;
                 }
 ;
             }
