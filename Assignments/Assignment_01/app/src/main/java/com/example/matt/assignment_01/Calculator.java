@@ -28,6 +28,18 @@ public class Calculator extends AppCompatActivity {
     private Button clr;
     private TextView screen;
 
+    //All the operators you need to make math happen. Huh Huh
+    private final String addition = "+";
+    private final String subtraction = "-";
+    private final String multiplication = "*";
+    private final String division = "/";
+    private final String equals = "=";
+    private String action;
+
+    //Sets the first value to be not a number to avoid causing divide by zero problems
+    private double val01 =Double.NaN;
+    private double val02;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +55,7 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 //Gets the prev tex on the screen and adds the value
                 //from the strings repository
-                screen.setText(screen.getText().toString() + getString(R.string.n01));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.n01));
 
             }
         });
@@ -51,104 +63,107 @@ public class Calculator extends AppCompatActivity {
         n02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n02));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.n02));
             }
         });
 
         n03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n03));
+                screen.setText(screen.getText().toString()+ " "  + getString(R.string.n03));
             }
         });
 
         n04.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n04));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.n04));
             }
         });
 
         n05.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n05));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.n05));
             }
         });
 
         n06.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n06));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.n06));
             }
         });
 
         n07.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n07));
+                screen.setText(screen.getText().toString() + " "  + getString(R.string.n07));
             }
         });
 
         n08.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n08));
+                screen.setText(screen.getText().toString() + " "  + getString(R.string.n08));
             }
         });
         n09.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n09));
+                screen.setText(screen.getText().toString() + " "  + getString(R.string.n09));
             }
         });
 
         n00.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.n00));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.n00));
             }
         });
 
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bDec));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.bDec));
             }
         });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bAdd));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.bAdd));
+                makeMathHappen();
+                action = addition;
+
             }
         });
 
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bSub));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.bSub));
             }
         });
 
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bMul));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.bMul));
             }
         });
 
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bDiv));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.bDiv));
             }
         });
 
         eql.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                screen.setText(screen.getText().toString() + getString(R.string.bEql));
+                screen.setText(screen.getText().toString() + " " + getString(R.string.bEql));
             }
         });
         //This is going to delete the eqation by one
@@ -196,6 +211,42 @@ public class Calculator extends AppCompatActivity {
 
 
 
+    }//End function
+
+    public double makeMathHappen()
+    {
+        //checking to see if the first value is actually a number
+        if(!Double.isNaN(val01))
+        {
+            //converts what's on the screen to a double
+            val02 = Double.parseDouble(screen.getText().toString());
+
+            switch(action)
+            {
+                case addition:
+                    val01 = val01 + val02;
+                    break;
+                case subtraction:
+                    val01 = val01 - val02;
+                    break;
+                case multiplication:
+                    val01 = val01 * val02;
+                    break;
+                case division:
+                    val01 = val01 / val02;
+                    break;
+                case equals:
+                    break;
+            }
+        }//End if
+        else
+            {
+                val01 = Double.parseDouble(screen.getText().toString());
+            }
+
+
+
+        return 0.0;
     }//End function
 
 }//End Class
