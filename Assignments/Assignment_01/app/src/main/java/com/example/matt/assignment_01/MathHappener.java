@@ -14,6 +14,8 @@ public class MathHappener {
     public double makeMathHappen(String value01, String operator, String value02)
     {
         //First thing. Convert both values to doubles so they can be math'd
+       double value01Doubled = Double.parseDouble(value01);
+        double value02Doubled = Double.parseDouble(value02);
 
         return 0;
     }
