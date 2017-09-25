@@ -152,7 +152,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                screen.setText(screen.getText().toString() + " " + getString(R.string.n06));
-                if(!value01.equals(" ") && !operatorHit)
+                if(!operatorHit)
                 {
                     value01 += getString(R.string.n06);
                     screen.setText(screen.getText().toString() + " " + value01);
@@ -348,7 +348,9 @@ public class Calculator extends AppCompatActivity {
                 else if(operatorHit == true)
                 {
                     value02 = " ";
-                    screen.setText(value02);
+                    operatorHit = false;
+                    operator = " ";
+                    screen.setText(value01);
                 }
 
             }
@@ -357,13 +359,18 @@ public class Calculator extends AppCompatActivity {
         clr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                screen.setText(screen.getText().toString() + getString(R.string.bClr));
 
+                //There was no need to run the calculate method with null values, it only
+                //executes when = is hit and then it passes the values on screen into it.
+                //in theory this should work now.
                 value01 = " ";
                 value02 = " ";
                 operator = " ";
-                //Runs the calculator method with no values and clears all equations
-                screen.setText(calculate.makeMathHappen(value01,operator,value02));
+                operatorHit = false;
+                hasDecimal = false;
+                screen.setText(" ");
+
+
 
             }
         });
