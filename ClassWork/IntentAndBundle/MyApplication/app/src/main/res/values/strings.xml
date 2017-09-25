@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyIntent</string>
+    <string name="bBrows">Browser</string>
+    <string name="bCont">Contacts</string>
+    <string name="bPhone">Phone</string>
+    <string name="bMap">Map</string>
+</resources>
