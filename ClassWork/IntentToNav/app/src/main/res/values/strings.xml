@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Intent to Nav</string>
+    <string name="bGoTo">Nav to Page Two!!</string>
+</resources>
