@@ -66,12 +66,14 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n01);
-                    screen.setText(screen.getText().toString() + " " + value01);
+//                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n01);
-                    screen.setText(screen.getText().toString() + " " + value02);
+//                    screen.setText(screen.getText().toString() + " " + value02);
+                    screen.setText(value01 + " " + operator + " " + value02);
                 }
 
             }
@@ -85,12 +87,14 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n02);
-                    screen.setText(screen.getText().toString() + " " + value01);
+//                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n02);
-                    screen.setText(screen.getText().toString() + " " + value02);
+//                    screen.setText(screen.getText().toString() + " " + value02);
+                    screen.setText(value02);
                 }
             }
         });
@@ -103,12 +107,14 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n03);
-                    screen.setText(screen.getText().toString() + " " + value01);
+//                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n03);
-                    screen.setText(screen.getText().toString() + " " + value02);
+//                    screen.setText(screen.getText().toString() + " " + value02);
+                    screen.setText(value02);
                 }
             }
         });
@@ -120,12 +126,14 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n04);
-                    screen.setText(screen.getText().toString() + " " + value01);
+//                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n04);
-                    screen.setText(screen.getText().toString() + " " + value02);
+//                    screen.setText(screen.getText().toString() + " " + value02);
+                    screen.setText(value02);
                 }
             }
         });
@@ -138,12 +146,14 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n05);
-                    screen.setText(screen.getText().toString() + " " + value01);
+//                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n05);
-                    screen.setText(screen.getText().toString() + " " + value02);
+//                    screen.setText(screen.getText().toString() + " " + value02);
+                    screen.setText(value01 + " " + operator + " " + value02);
                 }
             }
         });
@@ -155,12 +165,13 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n06);
-                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n06);
-                    screen.setText(screen.getText().toString() + " " + value02);
+
+                    screen.setText(value01 + " " + operator + " " + value02);
                 }
             }
         });
@@ -173,12 +184,12 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n07);
-                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n07);
-                    screen.setText(screen.getText().toString() + " " + value02);
+                    screen.setText(value01 + " " + operator + " " + value02);
                 }
             }
         });
@@ -191,11 +202,12 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n08);
-                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n08);
+                    screen.setText(value01 + " " + operator + " " + value02);
                 }
             }
         });
@@ -207,7 +219,7 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n09);
-                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
@@ -225,11 +237,12 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit)
                 {
                     value01 += getString(R.string.n00);
-                    screen.setText(screen.getText().toString() + " " + value01);
+                    screen.setText(value01);
                 }
                 else if(operatorHit == true)
                 {
                     value02 += getString(R.string.n00);
+                    screen.setText(value01 + " " + operator + " " + value02);
                 }
             }
         });
