@@ -275,7 +275,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!operatorHit)
+                if(!operatorHit && !value01.equals(" "))
                 {
 
                     operator = getString(R.string.bPlus);
@@ -291,7 +291,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!operatorHit)
+                if(!operatorHit && !value01.equals(" "))
                 {
 
                     operator = getString(R.string.bSub);
@@ -307,7 +307,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!operatorHit)
+                if(!operatorHit && !value01.equals(" "))
                 {
                     screen.setText(screen.getText().toString() + " " + getString(R.string.bMul));
                     operator = getString(R.string.bMul);
@@ -322,7 +322,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!operatorHit)
+                if(!operatorHit && !value01.equals(" "))
                 {
 
                     operator = getString(R.string.bDiv);
@@ -396,7 +396,7 @@ public class Calculator extends AppCompatActivity {
                 if(!operatorHit && !negative)
                 {
                     value01 = makePositiveOrNegative(value01);
-                    screen.setText(R.string.bPMn+ value01);
+                    screen.setText(value01);
                 }
                 else if(!operatorHit && negative == true)
                 {
@@ -406,7 +406,7 @@ public class Calculator extends AppCompatActivity {
                 else if(operatorHit == true && !negative)
                 {
                     value02 = makePositiveOrNegative(value02);
-                    screen.setText(R.string.bPMn + value02);
+                    screenvalue02);
                 }
                 else if(operatorHit == true && negative == true)
                 {
