@@ -339,28 +339,29 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 if(operatorHit == true && !value01.equals(" ") && !value02.equals(" "))
                 {
-//                    value01 = calculate.makeMathHappen(value01,operator,value02);
-                        if(operator.equals(R.string.bPlus))
-                        {
-                        value01 =calculate.addNumbers(value01,value02);
-                        }
-                        else if(operator.equals(R.string.bSub))
-                        {
-                            value01 = calculate.subtractNumbers(value01,value02);
-                        }
-                        else if(operator.equals(R.string.bMul))
-                        {
-                            value01 = calculate.multiplyNumbers(value01,value02);
-                        }
-                        else if(operator.equals(R.string.bDiv))
-                        {
-                            value01 = calculate.divideNumbers(value01,value02);
-                        }
+                    value01 = calculate.makeMathHappen(value01,operator,value02);
+//                        if(operator.equals(R.string.bPlus))
+//                        {
+//                        value01 =calculate.addNumbers(value01,value02);
+//                        }
+//                        else if(operator.equals(R.string.bSub))
+//                        {
+//                            value01 = calculate.subtractNumbers(value01,value02);
+//                        }
+//                        else if(operator.equals(R.string.bMul))
+//                        {
+//                            value01 = calculate.multiplyNumbers(value01,value02);
+//                        }
+//                        else if(operator.equals(R.string.bDiv))
+//                        {
+//                            value01 = calculate.divideNumbers(value01,value02);
+//                        }
 //                    screen.setText(screen.getText().toString() + " " + getString(R.string.bEql));
 //                    screen.setText(" ");
                     screen.setText(value01);
                     value02 = " ";
                     operatorHit = false;
+                    hasDecimal = true;
                 }
 ;
             }
