@@ -45,6 +45,7 @@ public class Calculator extends AppCompatActivity {
     private double result;
     private boolean operatorHit;
     private boolean hasDecimal;
+    private boolean negative;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -392,13 +393,25 @@ public class Calculator extends AppCompatActivity {
         plsMn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!operatorHit)
+                if(!operatorHit && !negative)
                 {
                     value01 = makePositiveOrNegative(value01);
+                    screen.setText(R.string.bPMn+ value01);
                 }
-                else if(operatorHit == true)
+                else if(!operatorHit && negative == true)
+                {
+                    value01 = makePositiveOrNegative(value01);
+                    screen.setText(value01);
+                }
+                else if(operatorHit == true && !negative)
                 {
                     value02 = makePositiveOrNegative(value02);
+                    screen.setText(R.string.bPMn + value02);
+                }
+                else if(operatorHit == true && negative == true)
+                {
+                    value02 = makePositiveOrNegative(value02);
+                    screen.setText(value02);
                 }
             }
         });
