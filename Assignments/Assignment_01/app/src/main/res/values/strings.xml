@@ -20,4 +20,5 @@
     <string name="bEql">=</string>
     <string name="num02">2</string>
     <string name="bPlus">+</string>
+    <string name="bPMn">+/-</string>
 </resources>

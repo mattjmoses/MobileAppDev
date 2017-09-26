@@ -185,5 +185,14 @@
             android:layout_alignBottom="@+id/btnDec"
             android:layout_toEndOf="@+id/btnDec"
             android:text="@string/bEql" />
+
+        <Button
+            android:id="@+id/btnPlsMn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtScreen"
+            android:layout_marginEnd="7dp"
+            android:layout_toStartOf="@+id/btnBck"
+            android:text="@string/bPMn" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
