@@ -19,8 +19,15 @@ public class MathHappener {
         double result;
         String strResult;
 
+        //First checking for divide by zero errors
+        //Tells the user to stop trying to divide by zero
+        if(value02 == "0" || value02 == "0.0" || value02 == null)
+        {
+            strResult = "Quit trying to break the universe!";
+            return strResult;
+        }
         //Just looping through and figuring out the math.
-        if(operator.equals("+"))
+        else if(operator.equals("+"))
         {
            result = value01Doubled + value02Doubled;
            strResult = String.valueOf(result);
