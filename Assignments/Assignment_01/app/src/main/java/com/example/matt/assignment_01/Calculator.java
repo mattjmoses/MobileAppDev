@@ -25,16 +25,17 @@ public class Calculator extends AppCompatActivity {
     private Button div;
     private Button eql;
     private Button bck;
+    private Button plsMn;
     private Button clr;
     private TextView screen;
     private MathHappener calculate = new MathHappener();
 
     //All the operators you need to make math happen. Huh Huh
-    private final String addition = "+";
-    private final String subtraction = "-";
-    private final String multiplication = "*";
-    private final String division = "/";
-    private final String equals = "=";
+//    private final String addition = "+";
+//    private final String subtraction = "-";
+//    private final String multiplication = "*";
+//    private final String division = "/";
+//    private final String equals = "=";
 
 
     //Sets the first value to be not a number to avoid causing divide by zero problems
@@ -388,6 +389,20 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
+        plsMn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!operatorHit)
+                {
+                    value01 = makePositiveOrNegative(value01);
+                }
+                else if(operatorHit == true)
+                {
+                    value02 = makePositiveOrNegative(value02);
+                }
+            }
+        });
+
 
 
     }//End function
@@ -413,13 +428,20 @@ public class Calculator extends AppCompatActivity {
         eql = (Button)findViewById(R.id.btnEql);
         bck = (Button)findViewById(R.id.btnBck);
         clr = (Button)findViewById(R.id.btnClr);
+        plsMn = (Button)findViewById(R.id.btnPlsMn);
         screen = (TextView)findViewById(R.id.txtScreen);
-
-
-
-
     }//End function
 
+    private String makePositiveOrNegative(String number)
+    {
+        //Casts the string to a double to make it negative and multiplies it
+        //by -1 to make it negative or positive
+        //Then casts it back to a string and sends it on it's way
+        double changeState = Double.parseDouble(number);
+        changeState = changeState * -1;
+        number = String.valueOf(changeState);
+        return number;
+    }//End function
 
 
 }//End Class
