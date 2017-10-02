@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         while(myIterator.hasNext())//While there's something left on the list to read
         {
 //            Toast.makeText(getBaseContext(),myIterator.next(),Toast.LENGTH_LONG).show();
-            CharSequence text = myIterator.next();
+            CharSequence text = myIterator.next(); //
             int duration = Toast.LENGTH_LONG;
             Toast toast = Toast.makeText(context,text,duration);
             toast.show();
