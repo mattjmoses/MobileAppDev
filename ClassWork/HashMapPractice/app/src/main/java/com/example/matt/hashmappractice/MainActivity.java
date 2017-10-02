@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("The content of the clone is:" +a);
         System.out.println("The size of the clone is: "+a.size());//You can find the size by calling .size()
-        System.out.println("The content of the ArrayList is:" +arl);
+        System.out.println("The content of the ArrayList is:" +arl);//
         System.out.println("The size of the ArrayList is: "+arl.size());//You can find the size by calling .size()
 
 
