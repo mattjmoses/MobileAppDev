@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">File io</string>
+    <string name="bLoad">Load</string>
+    <string name="bSave">Save</string>
+</resources>
