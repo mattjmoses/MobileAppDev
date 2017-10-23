@@ -19,7 +19,7 @@ public class DBAdapter {
             "create table contacts(_id integer primary key autoincrement,"
                     + "name text not null,email text not null);";
 
-    private final Context context;
+    private Context context;
     private DatabaseHelper DBHelper;
     private SQLiteDatabase db;
 
