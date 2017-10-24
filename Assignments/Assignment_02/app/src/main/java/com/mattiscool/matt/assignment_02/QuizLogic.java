@@ -126,12 +126,15 @@ public class QuizLogic extends ContextWrapper
                    questions.add(qus);
                    answers.add(ans);
                    map.put(questions.get(count), answers.get(count));
+
                    count++;
                }
             }
             br.close();
         }
         catch(IOException e){e.printStackTrace();}
+//        Collections.shuffle(questions);
+//        Collections.shuffle(answers);
 
     }
 

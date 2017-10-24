@@ -50,12 +50,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         quizLogic = new QuizLogic(this.getApplicationContext());
-
         try {
             quizLogic.parseText();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
         //Hooking everything up.
 
         scoreView = (TextView)findViewById(R.id.txtScoreBox);
@@ -159,8 +160,8 @@ public class MainActivity extends AppCompatActivity {
         boolean done02 = false;
         Random rand01 = new Random();
         Random rand02 = new Random();
-        int randNum01 = rand01.nextInt((9 - 1) + 1) + 1;
-        int randNum02 = rand02.nextInt((9-1) +1) +1;
+        int randNum01 = rand01.nextInt((10 - 1) + 1) + 1;
+        int randNum02 = rand02.nextInt((10-1) +1) +1;
         List<String> buttons = new ArrayList<>();
         buttons.add(quizLogic.getAnswers().get(randNum01));
         buttons.add(quizLogic.getAnswers().get(randNum02));
