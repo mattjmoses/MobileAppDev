@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quiz!! >:0</string>
+    <string name="scoreLbl">THE SCORE!</string>
+    <string name="scoreNum">0</string>
+</resources>
