@@ -75,11 +75,13 @@ public class MainActivity extends AppCompatActivity {
                     stScore = Integer.toString(score);
                     scoreView.setText(stScore);
                     questionCount++;
+                    checkEnd();
                     updateQuesrtions();
                 }
                 else
                 {
                     questionCount++;
+                    checkEnd();
                     updateQuesrtions();
                 }
             }
@@ -95,11 +97,13 @@ public class MainActivity extends AppCompatActivity {
                     stScore = Integer.toString(score);
                     scoreView.setText(stScore);
                     questionCount++;
+                    checkEnd();
                     updateQuesrtions();
                 }
                 else
                 {
                     questionCount++;
+                    checkEnd();
                     updateQuesrtions();
                 }
 
@@ -115,11 +119,13 @@ public class MainActivity extends AppCompatActivity {
                     stScore = Integer.toString(score);
                     scoreView.setText(stScore);
                     questionCount++;
+                    checkEnd();
                     updateQuesrtions();
                 }
                 else
                     {
                         questionCount++;
+                        checkEnd();
                         updateQuesrtions();
                     }
             }
@@ -166,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         return buttons;
     }
 
-    public void checEnd()
+    public void checkEnd()
     {
         if(score == 10 ||questionCount == 10)
         {
