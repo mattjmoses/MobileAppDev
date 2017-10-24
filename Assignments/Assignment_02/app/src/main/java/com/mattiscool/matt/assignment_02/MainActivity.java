@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button01.getText() == answer)
+                if(answer.equals(button01.getText()))
                 {
                     score = score + 1;
-                    updateScore();
+//                    updateScore();
                     updateQuesrtions();
                 }
             }
@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         button02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button02.getText() == answer)
+                if(answer.equals(button02.getText()))
                 {
                     score = score + 1;
-                    updateScore();
+//                    updateScore();
                     updateQuesrtions();
                 }
 
@@ -67,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
         button03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(button03.getText() == answer)
+                if(answer.equals(button03.getText()))
                 {
                     score = score + 1;
-                    updateScore();
+//                    updateScore();
                     updateQuesrtions();
                 }
             }
