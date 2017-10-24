@@ -1,5 +1,6 @@
 package com.mattiscool.matt.assignment_02;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +17,9 @@ public class QuizLogic
     //Two arraylists built from a text file.
     //Prototype arraylists.
     ArrayList<String> questions = new ArrayList<String>();
+
+
+
     ArrayList<String> answers = new ArrayList<String>();
     //Our Hash Map. NOW. Time to put some stuff in it.
     Map<String,String> map = new HashMap<String,String>();
@@ -125,6 +129,12 @@ public class QuizLogic
 
         return null;
     }
+
+    public ArrayList<String> getAnswers() {
+        return answers;
+    }
+
+
 
 
 

@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     //Instantiating the quiz logic class.
@@ -81,9 +84,12 @@ public class MainActivity extends AppCompatActivity {
     private void updateQuesrtions()
     {
         questionPanel.setText(quizLogic.getQuestion(questionNumber));
-        button01.setText(quizLogic.getChoice01(questionNumber));
-        button02.setText(quizLogic.getChoice02(questionNumber));
-        button03.setText(quizLogic.getChoice03(questionNumber));
+//        button01.setText(quizLogic.getChoice01(questionNumber));
+//        button02.setText(quizLogic.getChoice02(questionNumber));
+//        button03.setText(quizLogic.getChoice03(questionNumber));
+        button01.setText(populateButtons().get(0));
+        button02.setText(populateButtons().get(1));
+        button02.setText(populateButtons().get(2));
 
         answer = quizLogic.getCorrectAnswer(questionNumber);
         questionNumber++;
@@ -92,6 +98,16 @@ public class MainActivity extends AppCompatActivity {
     private void updateScore()
     {
         scoreView.setText(score);
+    }
+
+    public List<String> populateButtons()
+    {
+        List<String> buttons = new ArrayList<>();
+        buttons.add(quizLogic.getCorrectAnswer(questionNumber));
+        buttons.add(quizLogic.getAnswers().get(3));
+        buttons.add(quizLogic.getAnswers().get(5));
+
+        return buttons;
     }
 
 
