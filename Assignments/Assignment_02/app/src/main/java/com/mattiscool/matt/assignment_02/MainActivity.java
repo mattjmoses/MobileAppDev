@@ -171,7 +171,8 @@ public class MainActivity extends AppCompatActivity {
         if(score == 10 ||questionCount == 10)
         {
             Intent intent = new Intent(getApplicationContext(),EndScreen.class);
-            intent.putExtra("end",stScore);
+            intent.putExtra("data",stScore);
+            startActivity(intent);
         }
     }
 

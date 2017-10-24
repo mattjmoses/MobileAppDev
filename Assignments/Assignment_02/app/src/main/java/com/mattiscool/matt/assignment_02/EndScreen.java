@@ -13,5 +13,10 @@ public class EndScreen extends AppCompatActivity {
 
         TextView endMessage;
         endMessage = (TextView)findViewById(R.id.txtEndMessage);
+
+        Bundle bundle = getIntent().getExtras();
+        String score = bundle.getString("data");
+
+        endMessage.setText("Your final score is.." + score + " out of 10!");
     }
 }
