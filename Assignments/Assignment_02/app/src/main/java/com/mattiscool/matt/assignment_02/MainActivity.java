@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private int score = 0;
 
 
+
     public MainActivity() {
 
     }
@@ -56,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
         }
         //Hooking everything up.
 
-        scoreView = (TextView)findViewById(R.id.txtScoreCount);
+
         questionPanel = (TextView)findViewById(R.id.txtQuestionBox);
         button01 = (Button)findViewById(R.id.btn01);
         button02 = (Button)findViewById(R.id.btn02);
         button03 = (Button)findViewById(R.id.btn03);
-        scoreView.setText(score);
+
         updateQuesrtions();
         //Button01 Listener
         button01.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 if(answer.equals(button01.getText()))
                 {
                     score = score + 1;
-                    scoreView.setText(score);
+
                     updateQuesrtions();
                 }
             }
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 if(answer.equals(button02.getText()))
                 {
                     score = score + 1;
-                    scoreView.setText(score);
+
                     updateQuesrtions();
                 }
 
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 if(answer.equals(button03.getText()))
                 {
                     score = score + 1;
-                    scoreView.setText(score);
+
                     updateQuesrtions();
                 }
             }
@@ -121,10 +122,7 @@ public class MainActivity extends AppCompatActivity {
         questionNumber++;
     }
 
-    private void updateScore(int score)
-    {
-        scoreView.setText(score);
-    }
+
 
     public List<String> populateButtons()
     {
@@ -133,8 +131,8 @@ public class MainActivity extends AppCompatActivity {
         boolean done02 = false;
         Random rand01 = new Random();
         Random rand02 = new Random();
-        int randNum01 = rand01.nextInt((10 - 1) + 1) + 1;
-        int randNum02 = rand02.nextInt((10-1) +1) +1;
+        int randNum01 = rand01.nextInt((9 - 1) + 1) + 1;
+        int randNum02 = rand02.nextInt((9-1) +1) +1;
         List<String> buttons = new ArrayList<>();
         buttons.add(quizLogic.getAnswers().get(randNum01));
         buttons.add(quizLogic.getAnswers().get(randNum02));
