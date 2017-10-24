@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String question;
     private String answer;
-    private int questionNumber = 0;
+    private int questionNumber = 1;
     private int score = 0;
 
 
