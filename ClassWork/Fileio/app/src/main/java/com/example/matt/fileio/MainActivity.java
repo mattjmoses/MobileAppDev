@@ -24,18 +24,7 @@ public class MainActivity extends AppCompatActivity {
         brnLoad = (Button)findViewById(R.id.btnLoad);
         textBox =(EditText) findViewById(R.id.txtBox);
         //Def Text here
-        InputStream is = this.getResources().openRawResource(R.raw.text);
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        String str = null;
 
-        try
-        {
-            while ((str=br.readLine())!=null)
-            {
-                Toast.makeText(getBaseContext(),str,Toast.LENGTH_LONG).show();
-            }
-        }
-        catch(IOException e){e.printStackTrace();}
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
