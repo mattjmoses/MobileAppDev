@@ -1,5 +1,6 @@
 package com.mattiscool.matt.assignment_02;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button02;
     private Button button03;
 
-
+    private int questionCount = 0;
     private String question;
     private String answer;
     private int questionNumber = 1;
@@ -73,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                     stScore = Integer.toString(score);
                     scoreView.setText(stScore);
+                    questionCount++;
+                    updateQuesrtions();
+                }
+                else
+                {
+                    questionCount++;
                     updateQuesrtions();
                 }
             }
@@ -87,6 +94,12 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                     stScore = Integer.toString(score);
                     scoreView.setText(stScore);
+                    questionCount++;
+                    updateQuesrtions();
+                }
+                else
+                {
+                    questionCount++;
                     updateQuesrtions();
                 }
 
@@ -101,8 +114,14 @@ public class MainActivity extends AppCompatActivity {
                     score = score + 1;
                     stScore = Integer.toString(score);
                     scoreView.setText(stScore);
+                    questionCount++;
                     updateQuesrtions();
                 }
+                else
+                    {
+                        questionCount++;
+                        updateQuesrtions();
+                    }
             }
         });
 
@@ -147,6 +166,14 @@ public class MainActivity extends AppCompatActivity {
         return buttons;
     }
 
+    public void checEnd()
+    {
+        if(score == 10 ||questionCount == 10)
+        {
+            Intent intent = new Intent(getApplicationContext(),EndScreen.class);
+            intent.putExtra("end",stScore);
+        }
+    }
 
 
 
