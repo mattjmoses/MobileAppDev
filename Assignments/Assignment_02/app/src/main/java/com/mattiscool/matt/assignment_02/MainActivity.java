@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,9 +87,17 @@ public class MainActivity extends AppCompatActivity {
 //        button01.setText(quizLogic.getChoice01(questionNumber));
 //        button02.setText(quizLogic.getChoice02(questionNumber));
 //        button03.setText(quizLogic.getChoice03(questionNumber));
-        button01.setText(populateButtons().get(0));
-        button02.setText(populateButtons().get(1));
-        button02.setText(populateButtons().get(2));
+        List<String> result = new ArrayList<String>();
+        result.add(populateButtons().get(0));
+        result.add(populateButtons().get(1));
+        result.add(populateButtons().get(2));
+        Collections.shuffle(result);
+//        button01.setText(populateButtons().get(0));
+//        button02.setText(populateButtons().get(1));
+//        button02.setText(populateButtons().get(2));
+        button01.setText(result.get(0));
+        button02.setText(result.get(1));
+        button02.setText(result.get(2));
 
         answer = quizLogic.getCorrectAnswer(questionNumber);
         questionNumber++;
@@ -106,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         buttons.add(quizLogic.getCorrectAnswer(questionNumber));
         buttons.add(quizLogic.getAnswers().get(3));
         buttons.add(quizLogic.getAnswers().get(5));
+
 
         return buttons;
     }

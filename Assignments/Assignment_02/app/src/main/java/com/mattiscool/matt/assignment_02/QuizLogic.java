@@ -2,6 +2,7 @@ package com.mattiscool.matt.assignment_02;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -51,7 +52,8 @@ public class QuizLogic
         map.put(questions.get(1),answers.get(1));
         map.put(questions.get(2),answers.get(2));
         map.put(questions.get(3),answers.get(3));
-
+//        Collections.shuffle(questions);
+//        Collections.shuffle(answers);
 
 
     }
