@@ -25,6 +25,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/txtScoreLbl"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="@string/scoreLbl" />
+
+        <TextView
+            android:id="@+id/txtScoreBox"
+            android:layout_width="208dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:text="@string/scoreNum" />
+
+        <TextView
             android:id="@+id/txtQuestionBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

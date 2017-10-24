@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private String answer;
     private int questionNumber = 1;
     private int score = 0;
-
+    String stScore = "";
 
 
     public MainActivity() {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //Hooking everything up.
 
-
+        scoreView = (TextView)findViewById(R.id.txtScoreBox);
         questionPanel = (TextView)findViewById(R.id.txtQuestionBox);
         button01 = (Button)findViewById(R.id.btn01);
         button02 = (Button)findViewById(R.id.btn02);
@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 if(answer.equals(button01.getText()))
                 {
                     score = score + 1;
-
+                    stScore = Integer.toString(score);
+                    scoreView.setText(stScore);
                     updateQuesrtions();
                 }
             }
@@ -84,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 if(answer.equals(button02.getText()))
                 {
                     score = score + 1;
-
+                    stScore = Integer.toString(score);
+                    scoreView.setText(stScore);
                     updateQuesrtions();
                 }
 
@@ -97,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 if(answer.equals(button03.getText()))
                 {
                     score = score + 1;
-
+                    stScore = Integer.toString(score);
+                    scoreView.setText(stScore);
                     updateQuesrtions();
                 }
             }
