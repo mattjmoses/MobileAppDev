@@ -1,6 +1,8 @@
 package com.mattiscool.matt.assignment_02;
 
+import android.app.Application;
 import android.content.Context;
+import android.content.res.AssetManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +20,7 @@ import java.util.StringTokenizer;
  * Created by Matt on 2017-10-23.
  */
 
-public class QuizLogic extends MainActivity
+public class QuizLogic extends Application
 
 {
     Context context;
@@ -146,6 +148,7 @@ public class QuizLogic extends MainActivity
 
     public void parseText()
     {
+
         InputStream is = this.getResources().openRawResource(R.raw.questions);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
         String str = null;

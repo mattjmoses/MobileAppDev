@@ -18,7 +18,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     //Instantiating the quiz logic class.
-    private QuizLogic quizLogic = new QuizLogic();
+    private QuizLogic quizLogic;
 
     //The UI elements of the app
     private TextView scoreView;
@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     private String answer;
     private int questionNumber = 1;
     private int score = 0;
+
+    public MainActivity() {
+        quizLogic = new QuizLogic();
+    }
 
 
     @Override
