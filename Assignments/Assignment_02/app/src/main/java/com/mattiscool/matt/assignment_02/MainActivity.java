@@ -36,12 +36,17 @@ public class MainActivity extends AppCompatActivity {
         button01 = (Button)findViewById(R.id.btn01);
         button02 = (Button)findViewById(R.id.btn02);
         button03 = (Button)findViewById(R.id.btn03);
-
+        updateQuesrtions();
         //Button01 Listener
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(button01.getText() == answer)
+                {
+                    score = score + 1;
+                    updateScore();
+                    updateQuesrtions();
+                }
             }
         });
 
@@ -49,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
         button02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(button02.getText() == answer)
+                {
+                    score = score + 1;
+                    updateScore();
+                    updateQuesrtions();
+                }
 
             }
         });
@@ -56,10 +67,32 @@ public class MainActivity extends AppCompatActivity {
         button03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(button03.getText() == answer)
+                {
+                    score = score + 1;
+                    updateScore();
+                    updateQuesrtions();
+                }
             }
         });
 
 
     }//End onCreate
-}
+    private void updateQuesrtions()
+    {
+        questionPanel.setText(quizLogic.getQuestion(questionNumber));
+        button01.setText(quizLogic.getChoice01(questionNumber));
+        button02.setText(quizLogic.getChoice02(questionNumber));
+        button03.setText(quizLogic.getChoice03(questionNumber));
+
+        answer = quizLogic.getCorrectAnswer(questionNumber);
+        questionNumber++;
+    }
+
+    private void updateScore()
+    {
+        scoreView.setText(score);
+    }
+
+
+}//End Class
