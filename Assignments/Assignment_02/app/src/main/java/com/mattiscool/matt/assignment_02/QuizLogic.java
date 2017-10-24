@@ -150,11 +150,17 @@ public class QuizLogic extends MainActivity
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
         String str = null;
         StringTokenizer stringTokenizer = new StringTokenizer(str, ":");
+        int count = 0;
         try
         {
             while ((str=br.readLine())!=null)
             {
-
+                String question = stringTokenizer.nextElement().toString();
+                String answer = stringTokenizer.nextElement().toString();
+                questions.add(question);
+                answers.add(answer);
+                map.put(questions.get(count),answers.get(count));
+                count++;
             }
         }
         catch(IOException e){e.printStackTrace();}

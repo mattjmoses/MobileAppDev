@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Builds the questions based on the text file(hopefully)
+        quizLogic.parseText();
         //Hooking everything up.
         scoreView = (TextView)findViewById(R.id.txtScoreCount);
         questionPanel = (TextView)findViewById(R.id.txtQuestionBox);
