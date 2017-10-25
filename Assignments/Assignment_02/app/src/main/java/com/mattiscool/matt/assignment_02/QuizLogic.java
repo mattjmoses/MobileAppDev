@@ -133,8 +133,8 @@ public class QuizLogic extends ContextWrapper
             br.close();
         }
         catch(IOException e){e.printStackTrace();}
-//        Collections.shuffle(questions);
-//        Collections.shuffle(answers);
+        Collections.shuffle(questions);
+        Collections.shuffle(answers);
 
     }
 

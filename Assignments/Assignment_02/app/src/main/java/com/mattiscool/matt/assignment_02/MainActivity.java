@@ -156,12 +156,11 @@ public class MainActivity extends AppCompatActivity {
     public List<String> populateButtons()
     {
         //Find wrong answers
-        boolean done = false;
-        boolean done02 = false;
+
         Random rand01 = new Random();
         Random rand02 = new Random();
-        int randNum01 = rand01.nextInt((9 - 1) + 1) + 1;
-        int randNum02 = rand02.nextInt((9-1) +1) +1;
+        int randNum01 = rand01.nextInt((20- 1) + 1) + 1;
+        int randNum02 = rand02.nextInt((20-1) +1) +1;
         List<String> buttons = new ArrayList<>();
         buttons.add(quizLogic.getAnswers().get(randNum01));
         buttons.add(quizLogic.getAnswers().get(randNum02));
