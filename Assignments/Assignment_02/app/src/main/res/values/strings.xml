@@ -2,4 +2,6 @@
     <string name="app_name">Quiz!! >:0</string>
     <string name="scoreLbl">THE SCORE!</string>
     <string name="scoreNum">0</string>
+    <string name="bBegin">BEGIN!</string>
+    <string name="PtintName">PRINT NAME</string>
 </resources>

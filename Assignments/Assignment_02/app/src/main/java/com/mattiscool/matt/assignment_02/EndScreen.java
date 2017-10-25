@@ -16,7 +16,8 @@ public class EndScreen extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String score = bundle.getString("data");
+        String name = bundle.getString("name");
 
-        endMessage.setText("Your final score is.." + score + " out of 10!");
+        endMessage.setText("Congratulaitons,"+name+" your final score is.." + score + " out of 10!");
     }
 }

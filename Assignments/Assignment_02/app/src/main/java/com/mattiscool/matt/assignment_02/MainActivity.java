@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private int questionNumber = 1;
     private int score = 0;
     String stScore = "";
+    public String name;
 
 
     public MainActivity() {
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        Bundle bundle = getIntent().getExtras();
+        name = bundle.getString("name");
 
         //Hooking everything up.
 
@@ -178,7 +180,10 @@ public class MainActivity extends AppCompatActivity {
         {
             Intent intent = new Intent(getApplicationContext(),EndScreen.class);
             intent.putExtra("data",stScore);
+            intent.putExtra("name",name);
             startActivity(intent);
+
+
         }
     }
 
