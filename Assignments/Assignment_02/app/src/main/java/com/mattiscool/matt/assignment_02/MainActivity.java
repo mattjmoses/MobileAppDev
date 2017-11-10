@@ -180,7 +180,8 @@ public class MainActivity extends AppCompatActivity {
         {
             Intent intent = new Intent(getApplicationContext(),EndScreen.class);
             intent.putExtra("data",stScore);
-            intent.putExtra("name",name);
+            Intent intent02 = new Intent(getApplicationContext(),EndScreen.class);
+            intent02.putExtra("name",name);
             startActivity(intent);
 
 
