@@ -20,6 +20,12 @@ import com.mattiscool.matt.assignment_03.dummy.DummyContent;
  */
 public class ImageDetailFragment extends Fragment {
     ImageView imView;
+    private String one = "1";
+    private String two = "2";
+    private String three = "3";
+    private String four = "4";
+    private String five = "5";
+
 
     /**
      * The fragment argument representing the item ID that this fragment
@@ -51,8 +57,29 @@ public class ImageDetailFragment extends Fragment {
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.imageName);
+            //Here now we're displaying the image name from the strings library...
+            if (appBarLayout != null)
+            {
+                if(mItem.id.equals(one))
+                {
+                    appBarLayout.setTitle(getText(R.string.img_01));
+                }
+                else if(mItem.id.equals(two))
+                {
+                    appBarLayout.setTitle(getText(R.string.img_02));
+                }
+                else if(mItem.id.equals(three))
+                {
+                    appBarLayout.setTitle(getText(R.string.img_03));
+                }
+                else if(mItem.id.equals(four))
+                {
+                    appBarLayout.setTitle(getText(R.string.img_04));
+                }
+                else if(mItem.id.equals(five))
+                {
+                    appBarLayout.setTitle(getText(R.string.img_05));
+                }
             }
         }
     }
@@ -64,7 +91,7 @@ public class ImageDetailFragment extends Fragment {
         imView =(ImageView) rootView.findViewById(R.id.img_display);
         // Show the dummy content as text in a TextView.//We want it to be an image view...
         if (mItem != null) {
-            if(mItem.id.equals("1"))
+            if(mItem.id.equals(one))
             {
                 imView.setImageResource(R.drawable.image_01);
                 return rootView;
@@ -72,14 +99,24 @@ public class ImageDetailFragment extends Fragment {
 //            ((TextView) rootView.findViewById(R.id.image_detail)).setText(mItem.url);
             //This works!
 
-            else if(mItem.id.equals("2"))
+            else if(mItem.id.equals(two))
             {
                 imView.setImageResource(R.drawable.image_02);
                 return rootView;
             }
-            else if(mItem.id.equals("3"))
+            else if(mItem.id.equals(three))
             {
                 imView.setImageResource(R.drawable.image_03);
+                return rootView;
+            }
+            else if(mItem.id.equals(four))
+            {
+                imView.setImageResource(R.drawable.image_04);
+                return rootView;
+            }
+            else if(mItem.id.equals(five))
+            {
+                imView.setImageResource(R.drawable.image_05);
                 return rootView;
             }
         }

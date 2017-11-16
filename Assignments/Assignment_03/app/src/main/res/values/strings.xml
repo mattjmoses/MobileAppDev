@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Assignment_03</string>
     <string name="title_image_detail">Image Detail</string>
+    <string name="img_01">Image 01</string>
+    <string name="img_02">Image 02</string>
+    <string name="img_03">Image 03</string>
+    <string name="img_04">Image 04</string>
+    <string name="img_05">Image 05</string>
 </resources>

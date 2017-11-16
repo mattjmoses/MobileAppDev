@@ -29,9 +29,11 @@ public class DummyContent {
 //        // Add some sample items.
 //        for (int i = 1; i <= COUNT; i++) {
 //            addItem(createDummyItem(i));
-        addItem(new DummyItem("1","Image_01","http://www.imgur.com"));
-        addItem(new DummyItem("2","Image_02","http://www.somethingawful.com"));
-        addItem(new DummyItem("3","Image_03","http://www.google.ca"));
+        addItem(new DummyItem("1","Image_01"));
+        addItem(new DummyItem("2","Image_02"));
+        addItem(new DummyItem("3","Image_03"));
+        addItem(new DummyItem("4","Image_04"));
+        addItem(new DummyItem("5","Image_05"));
         }
 
 
@@ -40,9 +42,9 @@ public class DummyContent {
         ITEM_MAP.put(item.id, item);
     }
 
-    private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
-    }
+//    private static DummyItem createDummyItem(int position) {
+//        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
+//    }
 
     private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
@@ -59,12 +61,12 @@ public class DummyContent {
     public static class DummyItem {
         public final String id;
         public final String imageName;
-        public final String url;
 
-        public DummyItem(String id, String imageName, String url) {
+
+        public DummyItem(String id, String imageName) {
             this.id = id;
             this.imageName = imageName;
-            this.url = url;
+
         }
 
         @Override
