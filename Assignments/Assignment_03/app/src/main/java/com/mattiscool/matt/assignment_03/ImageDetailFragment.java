@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mattiscool.matt.assignment_03.dummy.DummyContent;
@@ -18,6 +19,8 @@ import com.mattiscool.matt.assignment_03.dummy.DummyContent;
  * on handsets.
  */
 public class ImageDetailFragment extends Fragment {
+    ImageView imView;
+
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -58,7 +61,7 @@ public class ImageDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.image_detail, container, false);
-
+        imView =(ImageView) rootView.findViewById(R.id.img_display);
         // Show the dummy content as text in a TextView.//We want it to be an image view...
         if (mItem != null) {
 //            ((TextView) rootView.findViewById(R.id.image_detail)).setText(mItem.url);
