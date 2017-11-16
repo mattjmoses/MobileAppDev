@@ -64,8 +64,24 @@ public class ImageDetailFragment extends Fragment {
         imView =(ImageView) rootView.findViewById(R.id.img_display);
         // Show the dummy content as text in a TextView.//We want it to be an image view...
         if (mItem != null) {
+            if(mItem.id.equals("1"))
+            {
+                imView.setImageResource(R.drawable.image_01);
+                return rootView;
+            }
 //            ((TextView) rootView.findViewById(R.id.image_detail)).setText(mItem.url);
-            return rootView;
+            //This works!
+
+            else if(mItem.id.equals("2"))
+            {
+                imView.setImageResource(R.drawable.image_02);
+                return rootView;
+            }
+            else if(mItem.id.equals("3"))
+            {
+                imView.setImageResource(R.drawable.image_03);
+                return rootView;
+            }
         }
 
         return rootView;
