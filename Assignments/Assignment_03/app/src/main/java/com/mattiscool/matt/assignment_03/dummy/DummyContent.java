@@ -1,5 +1,8 @@
 package com.mattiscool.matt.assignment_03.dummy;
 
+import android.content.Context;
+import android.content.ContextWrapper;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,11 +15,16 @@ import com.mattiscool.matt.assignment_03.R;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class DummyContent {
-
+public class DummyContent extends ContextWrapper {
+    private String idVal_01 = getString(R.string.img_01);
+    private String idVal_02 = getString(R.string.img_02);
+    private String idVal_03 = getString(R.string.img_03);
+    private String idVal_04 = getString(R.string.img_04);
+    private String idVal_05 = getString(R.string.img_05);
     /**
      * An array of sample (dummy) items.
      */
+    Context context;
     public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
 
     /**
@@ -35,7 +43,13 @@ public class DummyContent {
         addItem(new DummyItem("3","Image_03"));
         addItem(new DummyItem("4","Image_04"));
         addItem(new DummyItem("5","Image_05"));
+
         }
+
+    public DummyContent(Context base) {
+        super(base);
+
+    }
 
 
     private static void addItem(DummyItem item) {
