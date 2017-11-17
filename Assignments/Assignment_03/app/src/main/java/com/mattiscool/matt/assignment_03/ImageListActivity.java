@@ -2,6 +2,7 @@ package com.mattiscool.matt.assignment_03;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class ImageListActivity extends AppCompatActivity {
     String three = "3";
     String four = "4";
     String five = "5";
+    Context context;
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -113,9 +115,12 @@ public class ImageListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
+
             //Here're the buttons..
 //            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).imageName);
+//            holder.mContentView.setText(mValues.get(position).imageName);
+            holder.mContentView.setText(R.string.img_01);
+            holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
