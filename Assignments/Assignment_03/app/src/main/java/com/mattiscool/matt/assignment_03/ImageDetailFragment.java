@@ -3,6 +3,7 @@ package com.mattiscool.matt.assignment_03;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mattiscool.matt.assignment_03.dummy.DummyContent;
 
@@ -100,8 +102,10 @@ public class ImageDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.image_detail, container, false);
-
+        //Adding to Shared Preferences here...
         context = container.getContext();
+        SharedPreferences sharedPrefs = context.getSharedPreferences("buttonClicks",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
         imView =(ImageView) rootView.findViewById(R.id.img_display);
         // Show the dummy content as text in a TextView.//We want it to be an image view...
         Animation anim = AnimationUtils.loadAnimation(getContext(),R.anim.animate);
@@ -111,7 +115,8 @@ public class ImageDetailFragment extends Fragment {
             {
                 imView.setImageResource(R.drawable.image_01);
                 imView.startAnimation(anim);
-                mItem.setClicked(true);
+                editor.putString("img_01","clicked");
+                editor.apply();
                 return rootView;
             }
 //            ((TextView) rootView.findViewById(R.id.image_detail)).setText(mItem.url);
@@ -120,24 +125,32 @@ public class ImageDetailFragment extends Fragment {
             {
                 imView.setImageResource(R.drawable.image_02);
                 imView.startAnimation(anim);
+                editor.putString("img_02","clicked");
+                editor.apply();
                 return rootView;
             }
             else if(mItem.id.equals(three))
             {
                 imView.setImageResource(R.drawable.image_03);
                 imView.startAnimation(anim);
+                editor.putString("img_03","clicked");
+                editor.apply();
                 return rootView;
             }
             else if(mItem.id.equals(four))
             {
                 imView.setImageResource(R.drawable.image_04);
                 imView.startAnimation(anim);
+                editor.putString("img_04","clicked");
+                editor.apply();
                 return rootView;
             }
             else if(mItem.id.equals(five))
             {
                 imView.setImageResource(R.drawable.image_05);
                 imView.startAnimation(anim);
+                editor.putString("img_05","clicked");
+                editor.apply();
                 return rootView;
             }
         }

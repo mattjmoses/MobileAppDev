@@ -37,6 +37,7 @@ public class ImageListActivity extends AppCompatActivity {
     String five = "5";
     Context context;
 
+
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -83,6 +84,7 @@ public class ImageListActivity extends AppCompatActivity {
                 DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
                 if (mTwoPane) {
                     item.setClicked(true);
+                    clicked = true;
                     Bundle arguments = new Bundle();
                     arguments.putString(ImageDetailFragment.ARG_ITEM_ID, item.id);
                     ImageDetailFragment fragment = new ImageDetailFragment();
@@ -95,10 +97,12 @@ public class ImageListActivity extends AppCompatActivity {
                     Intent intent = new Intent(context, ImageDetailActivity.class);
                     intent.putExtra(ImageDetailFragment.ARG_ITEM_ID, item.id);
                     item.setClicked(true);
+                    clicked = true;
                     context.startActivity(intent);
                 }
             }
         };
+        private boolean clicked;
 
         SimpleItemRecyclerViewAdapter(ImageListActivity parent,
                                       List<DummyContent.DummyItem> items,
@@ -125,13 +129,14 @@ public class ImageListActivity extends AppCompatActivity {
            {
                holder.mContentView.setText(R.string.img_01);
 
+
            }
             //Background color change.
 //            holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
             else if(mValues.get(position).id.equals("2"))
             {
                 holder.mContentView.setText(R.string.img_02);
-                if(mValues.get(position).isClicked() == true)
+                if(clicked == true)
                 {
                     holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
                 }
