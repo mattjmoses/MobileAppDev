@@ -104,7 +104,7 @@ public class ImageDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.image_detail, container, false);
         //Adding to Shared Preferences here...
         context = container.getContext();
-        SharedPreferences sharedPrefs = context.getSharedPreferences("buttonClicks",Context.MODE_PRIVATE);
+        SharedPreferences sharedPrefs = context.getSharedPreferences("buttonClicks01",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();
         imView =(ImageView) rootView.findViewById(R.id.img_display);
         // Show the dummy content as text in a TextView.//We want it to be an image view...

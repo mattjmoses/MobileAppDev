@@ -2,6 +2,7 @@ package com.mattiscool.matt.assignment_03;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -71,8 +72,8 @@ public class ImageListActivity extends AppCompatActivity {
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, mTwoPane));
     }
-
-    public static class SimpleItemRecyclerViewAdapter
+//Removing Static from THIS class signature to see if it works with the thing..
+    public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final ImageListActivity mParentActivity;
@@ -121,6 +122,13 @@ public class ImageListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
+            //Our shared preferences...
+            SharedPreferences sharedPrefs = getSharedPreferences("buttonClicks01",Context.MODE_PRIVATE);
+            String click_01 = sharedPrefs.getString("img_01","");
+            String click_02 = sharedPrefs.getString("img_02","");
+            String click_03 = sharedPrefs.getString("img_03","");
+            String click_04 = sharedPrefs.getString("img_04","");
+            String click_05 = sharedPrefs.getString("img_05","");
 
             //Here're the buttons..
 //            holder.mIdView.setText(mValues.get(position).id);
@@ -128,7 +136,10 @@ public class ImageListActivity extends AppCompatActivity {
            if(mValues.get(position).id.equals("1"))
            {
                holder.mContentView.setText(R.string.img_01);
-
+                if(click_01.equals("clicked"))
+                {
+                    holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
+                }
 
            }
             //Background color change.
@@ -136,7 +147,7 @@ public class ImageListActivity extends AppCompatActivity {
             else if(mValues.get(position).id.equals("2"))
             {
                 holder.mContentView.setText(R.string.img_02);
-                if(clicked == true)
+                if(click_02.equals("clicked"))
                 {
                     holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
                 }
@@ -144,14 +155,26 @@ public class ImageListActivity extends AppCompatActivity {
            else if(mValues.get(position).id.equals("3"))
            {
                holder.mContentView.setText(R.string.img_03);
+               if(click_03.equals("clicked"))
+               {
+                   holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
+               }
            }
            else if(mValues.get(position).id.equals("4"))
            {
                holder.mContentView.setText(R.string.img_04);
+               if(click_04.equals("clicked"))
+               {
+                   holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
+               }
            }
            else if(mValues.get(position).id.equals("5"))
            {
                holder.mContentView.setText(R.string.img_05);
+               if(click_05.equals("clicked"))
+               {
+                   holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
+               }
            }
 
             holder.itemView.setTag(mValues.get(position));
