@@ -36,6 +36,7 @@ public class ImageListActivity extends AppCompatActivity {
     String four = "4";
     String five = "5";
     Context context;
+
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -119,8 +120,28 @@ public class ImageListActivity extends AppCompatActivity {
             //Here're the buttons..
 //            holder.mIdView.setText(mValues.get(position).id);
 //            holder.mContentView.setText(mValues.get(position).imageName);
-            holder.mContentView.setText(R.string.img_01);
-            holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
+           if(mValues.get(position).id.equals("1"))
+           {
+               holder.mContentView.setText(R.string.img_01);
+           }
+            //Background color change.
+//            holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
+            else if(mValues.get(position).id.equals("2"))
+            {
+                holder.mContentView.setText(R.string.img_02);
+            }
+           else if(mValues.get(position).id.equals("3"))
+           {
+               holder.mContentView.setText(R.string.img_03);
+           }
+           else if(mValues.get(position).id.equals("4"))
+           {
+               holder.mContentView.setText(R.string.img_04);
+           }
+           else if(mValues.get(position).id.equals("5"))
+           {
+               holder.mContentView.setText(R.string.img_05);
+           }
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
