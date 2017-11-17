@@ -34,8 +34,8 @@ public class DummyContent extends ContextWrapper {
     public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
     private static final int COUNT = 25;
-
-    static {
+        //Removed Static..
+    static{
 //        // Add some sample items.
 //        for (int i = 1; i <= COUNT; i++) {
 //            addItem(createDummyItem(i));
@@ -78,7 +78,15 @@ public class DummyContent extends ContextWrapper {
     public static class DummyItem {
         public final String id;
         public final String imageName;
+        public boolean clicked;
 
+        public boolean isClicked() {
+            return clicked;
+        }
+
+        public void setClicked(boolean clicked) {
+            this.clicked = clicked;
+        }
 
         public DummyItem(String id, String imageName) {
             this.id = id;
@@ -90,5 +98,5 @@ public class DummyContent extends ContextWrapper {
         public String toString() {
             return imageName;
         }
-    }
+    }//End DummyItem Class
 }

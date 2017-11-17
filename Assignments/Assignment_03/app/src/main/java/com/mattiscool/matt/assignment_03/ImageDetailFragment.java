@@ -111,6 +111,7 @@ public class ImageDetailFragment extends Fragment {
             {
                 imView.setImageResource(R.drawable.image_01);
                 imView.startAnimation(anim);
+                mItem.setClicked(true);
                 return rootView;
             }
 //            ((TextView) rootView.findViewById(R.id.image_detail)).setText(mItem.url);

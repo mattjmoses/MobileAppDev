@@ -82,6 +82,7 @@ public class ImageListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
                 if (mTwoPane) {
+                    item.setClicked(true);
                     Bundle arguments = new Bundle();
                     arguments.putString(ImageDetailFragment.ARG_ITEM_ID, item.id);
                     ImageDetailFragment fragment = new ImageDetailFragment();
@@ -93,7 +94,7 @@ public class ImageListActivity extends AppCompatActivity {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, ImageDetailActivity.class);
                     intent.putExtra(ImageDetailFragment.ARG_ITEM_ID, item.id);
-
+                    item.setClicked(true);
                     context.startActivity(intent);
                 }
             }
@@ -123,12 +124,17 @@ public class ImageListActivity extends AppCompatActivity {
            if(mValues.get(position).id.equals("1"))
            {
                holder.mContentView.setText(R.string.img_01);
+
            }
             //Background color change.
 //            holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
             else if(mValues.get(position).id.equals("2"))
             {
                 holder.mContentView.setText(R.string.img_02);
+                if(mValues.get(position).isClicked() == true)
+                {
+                    holder.mContentView.setBackgroundColor(Color.parseColor("#f44242"));
+                }
             }
            else if(mValues.get(position).id.equals("3"))
            {
