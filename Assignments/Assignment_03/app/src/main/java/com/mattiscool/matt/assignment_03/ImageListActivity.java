@@ -12,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 
@@ -28,7 +29,11 @@ import java.util.List;
  * item details side-by-side using two vertical panes.
  */
 public class ImageListActivity extends AppCompatActivity {
-
+    String one = "1";
+    String two = "2";
+    String three = "3";
+    String four = "4";
+    String five = "5";
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -44,14 +49,7 @@ public class ImageListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         if (findViewById(R.id.image_detail_container) != null) {
             // The detail container view will be present only in the
@@ -115,7 +113,8 @@ public class ImageListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mIdView.setText(mValues.get(position).id);
+            //Here're the buttons..
+//            holder.mIdView.setText(mValues.get(position).id);
             holder.mContentView.setText(mValues.get(position).imageName);
 
             holder.itemView.setTag(mValues.get(position));
@@ -138,4 +137,6 @@ public class ImageListActivity extends AppCompatActivity {
             }
         }
     }
+
+
 }

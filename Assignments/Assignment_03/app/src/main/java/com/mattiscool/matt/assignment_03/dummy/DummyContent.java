@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.mattiscool.matt.assignment_03.R;
 
 /**
  * Helper class for providing sample content for user interfaces created by

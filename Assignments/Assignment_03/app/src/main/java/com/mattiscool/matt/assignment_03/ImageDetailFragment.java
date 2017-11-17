@@ -1,16 +1,22 @@
 package com.mattiscool.matt.assignment_03;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mattiscool.matt.assignment_03.dummy.DummyContent;
+
+import static com.mattiscool.matt.assignment_03.R.anim.animate;
 
 /**
  * A fragment representing a single Image detail screen.
@@ -25,6 +31,9 @@ public class ImageDetailFragment extends Fragment {
     private String three = "3";
     private String four = "4";
     private String five = "5";
+    private Context context;
+
+
 
 
     /**
@@ -42,8 +51,11 @@ public class ImageDetailFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ImageDetailFragment() {
+    public ImageDetailFragment()
+    {
+
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,39 +100,52 @@ public class ImageDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.image_detail, container, false);
+
+        context = container.getContext();
         imView =(ImageView) rootView.findViewById(R.id.img_display);
         // Show the dummy content as text in a TextView.//We want it to be an image view...
+        Animation anim = AnimationUtils.loadAnimation(getContext(),R.anim.animate);
+
         if (mItem != null) {
             if(mItem.id.equals(one))
             {
                 imView.setImageResource(R.drawable.image_01);
+                imView.startAnimation(anim);
                 return rootView;
             }
 //            ((TextView) rootView.findViewById(R.id.image_detail)).setText(mItem.url);
             //This works!
-
             else if(mItem.id.equals(two))
             {
                 imView.setImageResource(R.drawable.image_02);
+                imView.startAnimation(anim);
                 return rootView;
             }
             else if(mItem.id.equals(three))
             {
                 imView.setImageResource(R.drawable.image_03);
+                imView.startAnimation(anim);
                 return rootView;
             }
             else if(mItem.id.equals(four))
             {
                 imView.setImageResource(R.drawable.image_04);
+                imView.startAnimation(anim);
                 return rootView;
             }
             else if(mItem.id.equals(five))
             {
                 imView.setImageResource(R.drawable.image_05);
+                imView.startAnimation(anim);
                 return rootView;
             }
         }
 
         return rootView;
+    }
+
+    public void animationDoer()
+    {
+        Animation anim = AnimationUtils.loadAnimation(this.context,R.anim.animate);
     }
 }
