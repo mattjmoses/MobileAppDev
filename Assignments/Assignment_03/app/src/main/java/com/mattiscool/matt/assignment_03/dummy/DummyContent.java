@@ -21,6 +21,7 @@ public class DummyContent extends ContextWrapper {
     private String idVal_03 = getString(R.string.img_03);
     private String idVal_04 = getString(R.string.img_04);
     private String idVal_05 = getString(R.string.img_05);
+
     /**
      * An array of sample (dummy) items.
      */
@@ -43,6 +44,7 @@ public class DummyContent extends ContextWrapper {
         addItem(new DummyItem("3","Image_03"));
         addItem(new DummyItem("4","Image_04"));
         addItem(new DummyItem("5","Image_05"));
+
 
         }
 
