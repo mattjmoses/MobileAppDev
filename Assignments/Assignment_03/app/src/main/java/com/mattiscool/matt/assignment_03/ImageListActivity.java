@@ -46,6 +46,7 @@ public class ImageListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_image_list);
         ImageContent dumb = new ImageContent(getApplicationContext());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -76,6 +77,8 @@ public class ImageListActivity extends AppCompatActivity {
                 SharedPreferences sharedPrefs = getSharedPreferences("buttonClicks01",Context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = sharedPrefs.edit();
                 edit.clear().commit();
+//                ViewGroup vg = findViewById(R.id.image_list);
+//                vg.invalidate();
             }
         });
 
