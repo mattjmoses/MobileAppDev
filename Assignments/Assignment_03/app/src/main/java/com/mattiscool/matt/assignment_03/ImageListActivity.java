@@ -9,17 +9,14 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
 
-import com.mattiscool.matt.assignment_03.dummy.DummyContent;
+import com.mattiscool.matt.assignment_03.imageContent.ImageContent;
 
 import java.util.List;
 
@@ -50,7 +47,7 @@ public class ImageListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_list);
-        DummyContent dumb = new DummyContent(getApplicationContext());
+        ImageContent dumb = new ImageContent(getApplicationContext());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
@@ -86,19 +83,19 @@ public class ImageListActivity extends AppCompatActivity {
     }//End oncreate
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, mTwoPane));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, ImageContent.ITEMS, mTwoPane));
     }
 //Removing Static from THIS class signature to see if it works with the thing..
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final ImageListActivity mParentActivity;
-        private final List<DummyContent.DummyItem> mValues;
+        private final List<ImageContent.ImageItem> mValues;
         private final boolean mTwoPane;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
+                ImageContent.ImageItem item = (ImageContent.ImageItem) view.getTag();
                 if (mTwoPane) {
                     item.setClicked(true);
                     clicked = true;
@@ -122,7 +119,7 @@ public class ImageListActivity extends AppCompatActivity {
         private boolean clicked;
 
         SimpleItemRecyclerViewAdapter(ImageListActivity parent,
-                                      List<DummyContent.DummyItem> items,
+                                      List<ImageContent.ImageItem> items,
                                       boolean twoPane) {
             mValues = items;
             mParentActivity = parent;

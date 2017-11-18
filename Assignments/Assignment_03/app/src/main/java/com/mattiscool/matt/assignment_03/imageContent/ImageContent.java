@@ -1,4 +1,4 @@
-package com.mattiscool.matt.assignment_03.dummy;
+package com.mattiscool.matt.assignment_03.imageContent;
 
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -15,7 +15,7 @@ import com.mattiscool.matt.assignment_03.R;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class DummyContent extends ContextWrapper {
+public class ImageContent extends ContextWrapper {
     private String idVal_01 = getString(R.string.img_01);
     private String idVal_02 = getString(R.string.img_02);
     private String idVal_03 = getString(R.string.img_03);
@@ -23,15 +23,15 @@ public class DummyContent extends ContextWrapper {
     private String idVal_05 = getString(R.string.img_05);
 
     /**
-     * An array of sample (dummy) items.
+     * An array of sample (imageContent) items.
      */
     Context context;
-    public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
+    public static final List<ImageItem> ITEMS = new ArrayList<ImageItem>();
 
     /**
-     * A map of sample (dummy) items, by ID.
+     * A map of sample (imageContent) items, by ID.
      */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public static final Map<String, ImageItem> ITEM_MAP = new HashMap<String, ImageItem>();
 
     private static final int COUNT = 25;
         //Removed Static..
@@ -39,28 +39,28 @@ public class DummyContent extends ContextWrapper {
 //        // Add some sample items.
 //        for (int i = 1; i <= COUNT; i++) {
 //            addItem(createDummyItem(i));
-        addItem(new DummyItem("1","Image_01"));
-        addItem(new DummyItem("2","Image_02"));
-        addItem(new DummyItem("3","Image_03"));
-        addItem(new DummyItem("4","Image_04"));
-        addItem(new DummyItem("5","Image_05"));
+        addItem(new ImageItem("1","Image_01"));
+        addItem(new ImageItem("2","Image_02"));
+        addItem(new ImageItem("3","Image_03"));
+        addItem(new ImageItem("4","Image_04"));
+        addItem(new ImageItem("5","Image_05"));
 
 
         }
 
-    public DummyContent(Context base) {
+    public ImageContent(Context base) {
         super(base);
 
     }
 
 
-    private static void addItem(DummyItem item) {
+    private static void addItem(ImageItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
 
-//    private static DummyItem createDummyItem(int position) {
-//        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
+//    private static ImageItem createDummyItem(int position) {
+//        return new ImageItem(String.valueOf(position), "Item " + position, makeDetails(position));
 //    }
 
     private static String makeDetails(int position) {
@@ -73,9 +73,9 @@ public class DummyContent extends ContextWrapper {
     }
 
     /**
-     * A dummy item representing a piece of content.
+     * A imageContent item representing a piece of content.
      */
-    public static class DummyItem {
+    public static class ImageItem {
         public final String id;
         public final String imageName;
         public boolean clicked;
@@ -88,7 +88,7 @@ public class DummyContent extends ContextWrapper {
             this.clicked = clicked;
         }
 
-        public DummyItem(String id, String imageName) {
+        public ImageItem(String id, String imageName) {
             this.id = id;
             this.imageName = imageName;
 
@@ -98,5 +98,5 @@ public class DummyContent extends ContextWrapper {
         public String toString() {
             return imageName;
         }
-    }//End DummyItem Class
+    }//End ImageItem Class
 }

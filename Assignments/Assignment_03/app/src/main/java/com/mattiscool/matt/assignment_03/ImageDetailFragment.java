@@ -1,6 +1,5 @@
 package com.mattiscool.matt.assignment_03;
 
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,12 +12,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.mattiscool.matt.assignment_03.dummy.DummyContent;
-
-import static com.mattiscool.matt.assignment_03.R.anim.animate;
+import com.mattiscool.matt.assignment_03.imageContent.ImageContent;
 
 /**
  * A fragment representing a single Image detail screen.
@@ -45,9 +40,9 @@ public class ImageDetailFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
 
     /**
-     * The dummy content this fragment is presenting.
+     * The imageContent content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private ImageContent.ImageItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -64,10 +59,10 @@ public class ImageDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-            // Load the dummy content specified by the fragment
+            // Load the imageContent content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = ImageContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
@@ -107,7 +102,7 @@ public class ImageDetailFragment extends Fragment {
         SharedPreferences sharedPrefs = context.getSharedPreferences("buttonClicks01",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();
         imView =(ImageView) rootView.findViewById(R.id.img_display);
-        // Show the dummy content as text in a TextView.//We want it to be an image view...
+        // Show the imageContent content as text in a TextView.//We want it to be an image view...
         Animation anim = AnimationUtils.loadAnimation(getContext(),R.anim.animate);
 
         if (mItem != null) {
