@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -37,7 +38,7 @@ public class ImageListActivity extends AppCompatActivity {
     String four = "4";
     String five = "5";
     Context context;
-
+    Button btn_reset;
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -54,6 +55,8 @@ public class ImageListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
+        //The reset button.
+        btn_reset =(Button)findViewById(R.id.btn_reset);
 
 
         if (findViewById(R.id.image_detail_container) != null) {
@@ -67,7 +70,20 @@ public class ImageListActivity extends AppCompatActivity {
         View recyclerView = findViewById(R.id.image_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
-    }
+
+        //Click listener for the ol reset button.
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                SharedPreferences sharedPrefs = getSharedPreferences("buttonClicks01",Context.MODE_PRIVATE);
+                SharedPreferences.Editor edit = sharedPrefs.edit();
+                edit.clear().commit();
+            }
+        });
+
+
+    }//End oncreate
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, mTwoPane));

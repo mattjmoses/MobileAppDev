@@ -19,6 +19,15 @@
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:text="@string/res_reset" />
+
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
