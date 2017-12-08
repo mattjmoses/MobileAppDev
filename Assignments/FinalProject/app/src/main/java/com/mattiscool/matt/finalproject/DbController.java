@@ -19,15 +19,19 @@ public class DbController extends SQLiteOpenHelper {
 
     public DbController(Context context) {
         super(context, DB_name, null, 1); //Values for the DB so far...
+        SQLiteDatabase db = this.getWritableDatabase(); //This is only for testing purposes.
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //DB creation string.
+        db.execSQL("CREATE TABLE "+table_name +"("+col01+" INTEGER PRIMARY KEY AUTOINCREMENT, "+col02+"TEXT, " +col03+"TEXT, "+ col04+"INTEGER)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS "+ table_name);// Updates the dang table
+        onCreate(db);
     }
 }
