@@ -64,5 +64,14 @@
             android:layout_alignBottom="@+id/ratingInput"
             android:layout_alignParentStart="true"
             android:text="@string/rating" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingInput"
+            android:layout_marginTop="52dp"
+            android:layout_toEndOf="@+id/txtView02"
+            android:text="@string/addData" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
