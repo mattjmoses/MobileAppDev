@@ -42,13 +42,13 @@ public class DbController extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData()
+    public boolean insertData(String title, String link, String rating)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(t_title,"j");
-        values.put(t_link,"j");
-        values.put(t_rating,"");
+        values.put(t_title,title);
+        values.put(t_link,link);
+        values.put(t_rating,rating);
         long result = db.insert(table_name,null,values);
         db.close();
         if(result == -1)

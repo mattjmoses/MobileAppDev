@@ -25,10 +25,33 @@ public class MainActivity extends AppCompatActivity {
         addRating = (EditText)findViewById(R.id.editRating);
         confirmAdd = (Button)findViewById(R.id.buttonAdd);
 
-
+        addData();
 
 
     }
+
+    public void addData()
+    {
+        confirmAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean result = trailerDB.insertData(addTitle.getText().toString(),addLink.getText().toString(),addRating.getText().toString());
+                if(result)
+                {
+                    Toast.makeText(MainActivity.this, "Data added successfully :)", Toast.LENGTH_LONG).show();
+                }
+                else
+                    {
+                        Toast.makeText(MainActivity.this, "Data not added :C", Toast.LENGTH_LONG).show();
+                    }
+                    addTitle.setText("");
+                    addLink.setText("");
+                    addRating.setText("");
+            }
+        });
+    }
+
+
 
 
 
