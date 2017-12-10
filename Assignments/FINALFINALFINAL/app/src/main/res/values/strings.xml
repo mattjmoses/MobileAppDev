@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FINALFINALFINAL</string>
+    <string name="txTitle">Title</string>
+    <string name="txLink">Link</string>
+    <string name="txRating">Rating</string>
+    <string name="addBtn">ADD!</string>
 </resources>

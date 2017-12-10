@@ -19,15 +19,21 @@ public class DbController extends SQLiteOpenHelper {
     private final static String t_link = "link";
     private final static String t_rating = "rating";
 
+
+
     //The ol default constructor
     public DbController(Context context) {
         super(context, db_name,null,db_version );
+
+
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createSQL = "CREATE TABLE "+ table_name +" ("+t_id + " INTEGER PRIMARY KEY AUTOINCREMENT, "+ t_title+ " TEXT, "+t_link+" TEXT, "+t_rating +" TEXT)";
-        db.execSQL(createSQL);
+//        db = this.getWritableDatabase();
+
+        db.execSQL("CREATE TABLE trailers(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, link TEXT, rating TEXT)");
     }
 
     @Override
@@ -36,14 +42,24 @@ public class DbController extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertData(String title, String link, String rating)
+    public boolean insertData()
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(t_title,title);
-        values.put(t_link,link);
-        values.put(t_rating,rating);
-        db.insert(table_name,null,values);
+        values.put(t_title,"j");
+        values.put(t_link,"j");
+        values.put(t_rating,"");
+        long result = db.insert(table_name,null,values);
         db.close();
+        if(result == -1)
+        {
+            return false;
+        }
+        else
+            {
+                return true;
+            }
+
+
     }
 }
