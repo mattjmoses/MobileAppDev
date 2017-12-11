@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayDBActivity" />
+        <activity android:name=".EditActivity" />
     </application>
 
 </manifest>

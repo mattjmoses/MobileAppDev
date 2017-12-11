@@ -59,6 +59,9 @@ public class DisplayDBActivity extends AppCompatActivity {
                     {
                         //So, if there's data then move on over to the edit screen.
                         Intent editScreenIntent = new Intent(DisplayDBActivity.this, EditActivity.class);
+                        editScreenIntent.putExtra("id",t_id);
+                        editScreenIntent.putExtra("title",title); //This is sending along the id and title along.
+                        startActivity(editScreenIntent);//Then off we go!
                     }
                 }
 
