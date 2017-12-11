@@ -78,6 +78,23 @@ public class DbController extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String selectSQL = "SELECT id FROM trailers WHERE name = "+"'"+name+"'";
         Cursor data = db.rawQuery(selectSQL, null);
+        db.close();
         return data;
+    }
+    //Just one value for now......
+    public void updateRow(String title, int id)
+    {
+      SQLiteDatabase db = this.getWritableDatabase();
+      String updateSQL = "UPDATE trailers SET title = "+title +" WHERE id = "+id;
+      db.execSQL(updateSQL);
+      db.close();
+    }
+
+    public void deleteRow(int id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String delSQL = "DELETE FROM trailers WHERE id = "+id;
+        db.execSQL(delSQL);
+        db.close();
     }
 }

@@ -7,4 +7,5 @@
     <string name="showBtn">Show</string>
     <string name="btUpdate">Update</string>
     <string name="btDelete">Delete</string>
+    <string name="btAddEntry">Add New Trailer</string>
 </resources>

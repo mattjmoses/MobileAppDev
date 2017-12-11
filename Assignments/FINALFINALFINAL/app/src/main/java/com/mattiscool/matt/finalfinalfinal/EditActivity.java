@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by Matt on 2017-12-10.
@@ -42,5 +44,30 @@ public class EditActivity extends AppCompatActivity {
         //This now shows the title on the title thing.
         edTitle.setText(selectedTitle);
 
+        //The update button
+        btUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = edTitle.getText().toString();
+                //Checking if value is null
+                if(!title.equals(""))
+                {
+                    trailersDB.updateRow(selectedTitle,selectedID);  //Passing the title and ID to the update method
+                }
+                else
+                    {
+                        Toast.makeText(EditActivity.this, "Please fill out all fields", Toast.LENGTH_LONG).show();
+                    }
+
+            }
+        });
+        //The delete button (obviously)
+        btDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                trailersDB.deleteRow(selectedID);//Removing the row based on id
+
+            }
+        });
     }
 }
