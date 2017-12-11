@@ -69,23 +69,23 @@ public class DbController extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String select = "SELECT * FROM trailers";
         Cursor data = db.rawQuery(select,null);
-        db.close();
+
         return data;
     }
     //This is a stupid way to do it.
     public Cursor getId(String name)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        String selectSQL = "SELECT id FROM trailers WHERE name = "+"'"+name+"'";
+        String selectSQL = "SELECT id FROM trailers WHERE title = "+"'"+name+"'";
         Cursor data = db.rawQuery(selectSQL, null);
-        db.close();
+
         return data;
     }
     //Just one value for now......
     public void updateRow(String title, int id)
     {
       SQLiteDatabase db = this.getWritableDatabase();
-      String updateSQL = "UPDATE trailers SET title = "+title +" WHERE id = "+id;
+      String updateSQL = "UPDATE trailers SET title = "+"'"+title+"'" +" WHERE id = "+id;
       db.execSQL(updateSQL);
       db.close();
     }
@@ -95,6 +95,6 @@ public class DbController extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String delSQL = "DELETE FROM trailers WHERE id = "+id;
         db.execSQL(delSQL);
-        db.close();
+
     }
 }

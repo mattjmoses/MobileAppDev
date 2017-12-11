@@ -1,82 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txTitle"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="47dp" />
+    <RelativeLayout
+        android:id="@+id/rellAyout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textlink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txLink"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="91dp" />
+        <Button
+            android:id="@+id/buttonBacktoDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/eDelLink"
+            android:layout_below="@+id/buttonUpdate"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="47dp"
+            android:text="@string/btNavBack"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="333dp" />
 
-    <TextView
-        android:id="@+id/textRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txRating"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="144dp" />
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonUpdate"
+            android:layout_alignBottom="@+id/buttonUpdate"
+            android:layout_marginStart="47dp"
+            android:layout_toEndOf="@+id/buttonUpdate"
+            android:text="@string/btDelete"
+            tools:layout_editor_absoluteX="170dp"
+            tools:layout_editor_absoluteY="204dp" />
 
-    <EditText
-        android:id="@+id/eDelTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="20dp" />
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/eDelRating"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="46dp"
+            android:layout_toEndOf="@+id/textRating"
+            android:text="@string/btUpdate"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="204dp" />
 
-    <EditText
-        android:id="@+id/eDelLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="66dp" />
+        <EditText
+            android:id="@+id/eDelRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textRating"
+            android:layout_toEndOf="@+id/textRating"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="117dp" />
 
-    <EditText
-        android:id="@+id/eDelRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="117dp" />
+        <TextView
+            android:id="@+id/textRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textlink"
+            android:layout_marginTop="31dp"
+            android:text="@string/txRating"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="144dp" />
 
-    <Button
-        android:id="@+id/buttonUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btDelete"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="204dp" />
+        <EditText
+            android:id="@+id/eDelLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textlink"
+            android:layout_toEndOf="@+id/textlink"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="66dp" />
 
-    <Button
-        android:id="@+id/buttonDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btUpdate"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="204dp" />
+        <TextView
+            android:id="@+id/textlink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textTitle"
+            android:layout_marginTop="28dp"
+            android:layout_toStartOf="@+id/eDelTitle"
+            android:text="@string/txLink"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="91dp" />
 
-    <Button
-        android:id="@+id/buttonBacktoDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btNavBack"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="333dp" />
+        <EditText
+            android:id="@+id/eDelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textTitle"
+            android:layout_toEndOf="@+id/textTitle"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="20dp" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="46dp"
+            android:text="@string/txTitle"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="47dp" />
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

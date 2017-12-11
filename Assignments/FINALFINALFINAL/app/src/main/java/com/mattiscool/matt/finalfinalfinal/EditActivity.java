@@ -62,7 +62,7 @@ public class EditActivity extends AppCompatActivity {
                 //Checking if value is null
                 if(!title.equals(""))
                 {
-                    trailersDB.updateRow(selectedTitle,selectedID);  //Passing the title and ID to the update method
+                    trailersDB.updateRow(title,selectedID);  //Passing the title and ID to the update method
                 }
                 else
                     {
