@@ -1,5 +1,6 @@
 package com.mattiscool.matt.finalfinalfinal;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         showAllData = (Button)findViewById(R.id.buttonShow);
 
         addData();
+        goToData();
 
 
     }
@@ -66,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void goToData()
+    {
+        showAllData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showDataScreen = new Intent(MainActivity.this, DisplayDBActivity.class);
+            }
+        });
+
     }
 
 
