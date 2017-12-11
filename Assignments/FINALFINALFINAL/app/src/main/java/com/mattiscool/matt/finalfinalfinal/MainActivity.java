@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent showDataScreen = new Intent(MainActivity.this, DisplayDBActivity.class);
+                startActivity(showDataScreen);
             }
         });
 

@@ -8,4 +8,5 @@
     <string name="btUpdate">Update</string>
     <string name="btDelete">Delete</string>
     <string name="btAddEntry">Add New Trailer</string>
+    <string name="btNavBack">Go Back</string>
 </resources>

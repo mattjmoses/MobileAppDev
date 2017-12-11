@@ -17,7 +17,7 @@ public class EditActivity extends AppCompatActivity {
     private EditText edTitle;
     private EditText edLink;
     private EditText edRating;
-    private Button btUpdate, btDelete;
+    private Button btUpdate, btDelete, backToData;
     DbController trailersDB;
 
     int selectedID;
@@ -34,6 +34,7 @@ public class EditActivity extends AppCompatActivity {
         btUpdate = (Button)findViewById(R.id.buttonUpdate);
         btDelete = (Button)findViewById(R.id.buttonDelete);
         trailersDB = new DbController(this);
+        backToData = (Button)findViewById(R.id.buttonBacktoDisplay);
 
         //This is getting the info from the selection screen
         Intent recievedIntent = getIntent();
@@ -43,6 +44,15 @@ public class EditActivity extends AppCompatActivity {
 
         //This now shows the title on the title thing.
         edTitle.setText(selectedTitle);
+
+        //The back button
+        backToData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent backToData= new Intent(EditActivity.this, DisplayDBActivity.class);
+                startActivity(backToData);
+            }
+        });
 
         //The update button
         btUpdate.setOnClickListener(new View.OnClickListener() {

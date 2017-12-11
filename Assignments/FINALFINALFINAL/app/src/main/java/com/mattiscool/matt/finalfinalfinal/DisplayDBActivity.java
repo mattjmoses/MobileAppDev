@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -22,6 +23,7 @@ public class DisplayDBActivity extends AppCompatActivity {
     private static final String tag = "displayDBActivity";
     DbController trailersDB;
     ListView dbContents;
+    Button addEntryScreen;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstaceState)
@@ -30,6 +32,9 @@ public class DisplayDBActivity extends AppCompatActivity {
         setContentView(R.layout.displaydblayout);
         trailersDB = new DbController(this);
         dbContents = (ListView)findViewById(R.id.list_layout);
+        addEntryScreen = (Button)findViewById(R.id.buttonAddScreen);
+        populateList();
+        navToAdd();
     }
     //Displays the contents of the DB..
     public void populateList()
@@ -66,6 +71,18 @@ public class DisplayDBActivity extends AppCompatActivity {
                 }
 
 
+            }
+        });
+    }//End populate list
+
+
+    public void navToAdd()
+    {
+        addEntryScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent navToAdd = new Intent(DisplayDBActivity.this, MainActivity.class);
+                startActivity(navToAdd);
             }
         });
     }

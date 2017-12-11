@@ -71,4 +71,12 @@
         android:text="@string/btUpdate"
         tools:layout_editor_absoluteX="170dp"
         tools:layout_editor_absoluteY="204dp" />
+
+    <Button
+        android:id="@+id/buttonBacktoDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btNavBack"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="333dp" />
 </android.support.constraint.ConstraintLayout>
