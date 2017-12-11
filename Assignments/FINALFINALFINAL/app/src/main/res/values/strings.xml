@@ -4,4 +4,5 @@
     <string name="txLink">Link</string>
     <string name="txRating">Rating</string>
     <string name="addBtn">ADD!</string>
+    <string name="showBtn">Show</string>
 </resources>

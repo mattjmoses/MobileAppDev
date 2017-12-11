@@ -73,5 +73,13 @@
             android:layout_below="@+id/txRating"
             android:layout_marginTop="28dp"
             android:text="@string/addBtn" />
+
+        <Button
+            android:id="@+id/buttonShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/editLink"
+            android:layout_alignTop="@+id/buttonAdd"
+            android:text="@string/showBtn" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

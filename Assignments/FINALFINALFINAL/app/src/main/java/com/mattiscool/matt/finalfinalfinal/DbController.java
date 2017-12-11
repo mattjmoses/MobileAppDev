@@ -2,6 +2,7 @@ package com.mattiscool.matt.finalfinalfinal;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -61,5 +62,22 @@ public class DbController extends SQLiteOpenHelper {
             }
 
 
+    }
+
+    public Cursor getAllData()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String select = "SELECT * FROM trailers";
+        Cursor data = db.rawQuery(select,null);
+        db.close();
+        return data;
+    }
+    //This is a stupid way to do it.
+    public Cursor getId(String name)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selectSQL = "SELECT id FROM trailers WHERE name = "+"'"+name+"'";
+        Cursor data = db.rawQuery(selectSQL, null);
+        return data;
     }
 }

@@ -1,5 +1,6 @@
 package com.mattiscool.matt.finalfinalfinal;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     EditText addLink;
     EditText addRating;
     Button confirmAdd;
+    Button showAllData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         addLink = (EditText)findViewById(R.id.editLink);
         addRating = (EditText)findViewById(R.id.editRating);
         confirmAdd = (Button)findViewById(R.id.buttonAdd);
+        showAllData = (Button)findViewById(R.id.buttonShow);
 
         addData();
 
@@ -47,6 +50,20 @@ public class MainActivity extends AppCompatActivity {
                     addTitle.setText("");
                     addLink.setText("");
                     addRating.setText("");
+            }
+        });
+    }
+
+    public void getAllData()
+    {
+        showAllData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor result = trailerDB.getAllData();
+                if(result.getCount() == 0)
+                {
+                    return;
+                }
             }
         });
     }
